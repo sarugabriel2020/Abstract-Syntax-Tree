@@ -1,0 +1,44 @@
+Saru Gabriel-Alexandru, 323CB
+
+                            TEMA 3
+                        IOCLA  -->  AST
+
+        Pentru realizarea acestei teme, am avut nevoie de urmatoarele functii
+ajutatoare:
+    - calloc, prin care am alocat memorie pe heap pentru un nod (fiecare nod in
+    parte, evident)
+    - strtok, pentru a sparge input-ul primit, un string, dupa delimitatorul
+    primit ca variabila in skelet
+    - strlen, pentru a calcula lungimea unui string dintr-un nod (valoarea 
+    nodului)
+    - malloc, pentru a aloca pe heap o zona de memorie contigua, necesara pentru
+    sirul nostru pe care dorim sa il alocam; implicit, vom aloca un numar de 
+    octeti egal cu lunigmea calculata cu strlen
+    - memcpy, pentru a muta valoarea pe care deja o aveam sub format static in
+    zona de memorie de pe heap alocata precedent
+
+        Pentru rezolvarea temei, am mai folosit si alte functii, implementate
+de data aceasta personal, cum ar fi:
+    - is_operand, care verifica daca o valoare dintr-un nod reprezinta un
+    operand sau este un numar intreg
+    - make_node, functie care creeaza un nod nou (alocare memorie, inserare
+    valoare + legare la arbore); daca returneaza 0, inseamna ca nu s-a mai putut
+    face un nou strtok, si prin urmare, se termina programul
+    - tree_nodes_generator, cea mai importanta functie din tot programul; este
+    cea care ne da functionalitatea modului de lucru, si pe care o prezentam
+    direct la modul de gandire.
+
+        Modul  in care programul functioneaza (implicit functia despre care
+pomeneam mai sus) este destul de interesant: in primul rand, avem ca parametru
+radacina arborelui, de care se leaga celelalte noduri (ceilalti subarbori); vom
+retine de fiecare data nodul curent in care ne aflam, urmand mai apoi sa decidem
+in ce directie trebuie sa mergem ulterior. Daca suntem in radacina, atunci
+urmatorul nod va fi sigur in partea stanga. Daca suntem intr-un nod stanga, iar
+valoarea acestuia nu este un operand (adica este un numar intreg), atunci avem
+un nod frunza, iar urmatorul nod va fi fratele sau din dreapta, de asemenea o
+frunza. Ne intoarcem la nodul parinte, si vedem daca nodul din dreapta este NULL.
+Daca nu este NULL, mergem in spate pana gasim nodul cu copilul din dreapta este
+NULL, si apoi repetam procedeul descris mai sus.
+
+        Dupa ce se termina tot, intoarcem prin registrul eax nodul radacina,
+adica un pointer catre arborele dorit.
