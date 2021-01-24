@@ -25,7 +25,7 @@
  ( The checker also handles the release of the memory used to hold the shaft . )
 
 • Moreover, the iocla_atoi function is implemented (in the same file), which has a functionality similar to the atoi function in C.
-## The solving + realisation
+## The solving 
 
 • To carry out this project, I needed the following auxiliary functions:
 
@@ -47,3 +47,19 @@
     - make_node, function that creates a new node (memory allocation, value insertion + tree binding); if it returns 0, it means that a new strtok could not be made, and therefore the program ends;
     
     - tree_nodes_generator, the most important function in the whole program; it is the one that gives us the functionality of the way of working, and which presents it directly to the way of thinking.
+    
+   ## Example of output of the program
+   
+$ ./ast
+* -  5 6 7
+-7
+
+$ ./ast
++ + * 5 3 2 * 2 3 
+23
+
+$ ./ast 
+- * 4 + 3 2 5
+15
+
+![ImagineAST](C:\Users\toore\OneDrive\Desktop
