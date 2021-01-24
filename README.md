@@ -61,5 +61,3 @@ $ ./ast
 $ ./ast 
 - * 4 + 3 2 5
 15
-
-![ImagineAST](C:\Users\toore\OneDrive\Desktop
