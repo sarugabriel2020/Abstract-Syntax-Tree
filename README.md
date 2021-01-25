@@ -61,3 +61,6 @@ $ ./ast
 $ ./ast 
 - * 4 + 3 2 5
 15
+
+So the expression :
+![](AST.JPG)
