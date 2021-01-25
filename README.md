@@ -62,5 +62,7 @@ $ ./ast
 - * 4 + 3 2 5
 15
 
-So the expression :
+So the expression  4 / 64 - 2 * (3 + 1) in AST will be represented as this: 
+
+
 ![](AST.JPG)
